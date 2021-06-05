@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui/widgets/bottom_nav_bar.dart';
 import 'package:flutter_ui/widgets/category_card.dart';
@@ -19,12 +20,13 @@ class HomeScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
-                      height: 52,
-                      width: 52,
+                      height: 52.h,
+                      width: 52.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Color(0xFFF2BEA1),
@@ -35,10 +37,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Text(
                     'Good Morning\nRadi',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline4
-                        ?.copyWith(fontWeight: FontWeight.w900),
+                    textAlign: TextAlign.start,
+                    style: Theme.of(context).textTheme.headline4?.copyWith(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 27.sp,
+                        ),
                   ),
                   _buildSearchInput(),
                   _buildCategoryMenu(),

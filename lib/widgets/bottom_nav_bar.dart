@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui/constants.dart';
 
@@ -14,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
         horizontal: 20,
         vertical: 10,
       ),
-      height: 80,
+      height: 80.h,
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui/constants.dart';
 
@@ -48,7 +49,7 @@ class CategoryCard extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .headline6
-                        ?.copyWith(fontSize: 12),
+                        ?.copyWith(fontSize: 12.sp),
                   ),
                 ],
               ),
