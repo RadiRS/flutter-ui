@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_ui/screens/detail_screen.dart';
 import 'package:flutter_ui/widgets/bottom_nav_bar.dart';
 import 'package:flutter_ui/widgets/category_card.dart';
+import 'package:flutter_ui/widgets/search_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -43,8 +45,8 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 27.sp,
                         ),
                   ),
-                  _buildSearchInput(),
-                  _buildCategoryMenu(),
+                  SearchBar(),
+                  _buildCategoryMenu(context),
                 ],
               ),
             ),
@@ -55,7 +57,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Expanded _buildCategoryMenu() {
+  Expanded _buildCategoryMenu(BuildContext context) {
     return Expanded(
       child: GridView.count(
         crossAxisCount: 2,
@@ -66,46 +68,52 @@ class HomeScreen extends StatelessWidget {
           CategoryCard(
             title: 'Diet Recommendation',
             imgSource: 'assets/icons/Hamburger.svg',
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) {
+                  return DetailScreen();
+                }),
+              );
+            },
           ),
           CategoryCard(
             title: 'Kegel Exercises',
             imgSource: 'assets/icons/Excrecises.svg',
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) {
+                  return DetailScreen();
+                }),
+              );
+            },
           ),
           CategoryCard(
             title: 'Maditation',
             imgSource: 'assets/icons/Meditation.svg',
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) {
+                  return DetailScreen();
+                }),
+              );
+            },
           ),
           CategoryCard(
             title: 'Yoga',
             imgSource: 'assets/icons/yoga.svg',
-            onPress: () {},
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) {
+                  return DetailScreen();
+                }),
+              );
+            },
           ),
         ],
-      ),
-    );
-  }
-
-  Container _buildSearchInput() {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 30),
-      padding: EdgeInsets.symmetric(
-        horizontal: 30,
-        vertical: 5,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(29.5),
-      ),
-      child: TextField(
-        autocorrect: false,
-        decoration: InputDecoration(
-          hintText: 'Search',
-          icon: SvgPicture.asset('assets/icons/search.svg'),
-          border: InputBorder.none,
-        ),
       ),
     );
   }
