@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/data/data.dart';
+import 'package:flutter_ui/widgets/recents_orders.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -65,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          RecentOrders(),
         ],
       ),
     );
