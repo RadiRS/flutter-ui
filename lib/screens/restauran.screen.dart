@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/models/restaurant.dart';
+import 'package:flutter_ui/widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatefulWidget {
   final Restaurant restaurant;
@@ -52,7 +53,78 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     )
                   ],
                 ),
-              )
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.restaurant.name,
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      '0.2 miles away',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ],
+                ),
+                RatingStars(rating: widget.restaurant.rating),
+                SizedBox(height: 6.0),
+                Text(
+                  widget.restaurant.address,
+                  style: TextStyle(fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  backgroundColor: Theme.of(context).primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(19.0),
+                  ),
+                ),
+                child: Text(
+                  'Reviews',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  backgroundColor: Theme.of(context).primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(19.0),
+                  ),
+                ),
+                child: Text(
+                  'Contact',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ],
           )
         ],
