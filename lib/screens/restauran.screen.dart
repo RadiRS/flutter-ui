@@ -17,8 +17,45 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Detail Restaurant'),
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              Hero(
+                tag: widget.restaurant.imageUrl,
+                child: Image(
+                  height: 220.0,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.cover,
+                  image: AssetImage(widget.restaurant.imageUrl),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                  vertical: 50.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back_ios),
+                      color: Colors.white,
+                      iconSize: 30.0,
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.favorite),
+                      color: Theme.of(context).primaryColor,
+                      iconSize: 35.0,
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
