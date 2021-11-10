@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Food Delivery',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[50],
-        primaryColor: Colors.deepOrangeAccent,
+        primaryColor: Colors.brown[400],
       ),
       home: HomeScreen(),
     );
