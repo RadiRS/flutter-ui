@@ -5,6 +5,8 @@ import 'package:flutter_ui/screens/restauran.screen.dart';
 import 'package:flutter_ui/widgets/rating_stars.dart';
 import 'package:flutter_ui/widgets/recents_orders.dart';
 
+import 'cart.screen.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
 
@@ -18,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.account_circle),
           iconSize: 30.0,
@@ -33,7 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 20.0,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => CartScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
